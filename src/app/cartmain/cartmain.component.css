@@ -1,0 +1,69 @@
+.msection{
+    height: 388px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(https://restaurant.stepprojects.ge/images/inner_banner.jpg) no-repeat;
+    overflow: hidden;
+}
+
+h1{
+    font-size: 30px;
+    line-height: 70px;
+    color: #ffffff;
+    font-weight: 800;
+    text-align: center;
+    text-transform: capitalize;
+    margin-top: 100px;
+    text-shadow: 0px 0px 26.97px rgba(0, 0, 0, 0.75);
+}
+
+
+.redsection {
+    width: 100%;
+    height: 50px;
+    background-color: red;
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+}
+
+.redsection p{
+    padding-left: 20vw;
+    display: flex;
+    gap: 20px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+
+.redsection:before {
+    position: absolute;
+    content: "";
+    top: -4px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-repeat: repeat-x;
+    background: url(https://restaurant.stepprojects.ge/images/hover_bg.png);
+    height: 6px;
+
+}
+
+.redsection::after {
+    position: absolute;
+    content: "";
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-repeat: repeat-x;
+    background: url(https://restaurant.stepprojects.ge/images/hover_bg.png);
+    height: 6px;
+
+}
+.yellowcart{
+    color: yellow;
+}

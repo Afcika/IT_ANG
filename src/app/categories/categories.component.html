@@ -1,0 +1,90 @@
+<h1 class="f_h1">Categories</h1>
+<section class="categories">
+  <div>
+    <div class="categories_card">
+      <ul class="categories_info">
+        <li [class.active]="selectedCategory === null" (click)="filterByCategory(null)"><span>All</span></li>
+        <li [class.active]="selectedCategory === 1" (click)="filterByCategory(1)"><span>Salads</span></li>
+        <li [class.active]="selectedCategory === 2" (click)="filterByCategory(2)"><span>Soups</span></li>
+        <li [class.active]="selectedCategory === 3" (click)="filterByCategory(3)"><span>Chicken-Dishes</span></li>
+        <li [class.active]="selectedCategory === 4" (click)="filterByCategory(4)"><span>Beef-Dishes</span></li>
+        <li [class.active]="selectedCategory === 5" (click)="filterByCategory(5)"><span>Seafood-Dishes</span></li>
+        <li [class.active]="selectedCategory === 6" (click)="filterByCategory(6)"><span>Vegetable-Dishes</span></li>
+        <li [class.active]="selectedCategory === 7" (click)="filterByCategory(7)"><span>Bits&Bites</span></li>
+        <li [class.active]="selectedCategory === 8" (click)="filterByCategory(8)"><span>On-The-Side</span></li>
+      </ul>
+    </div>
+  
+    <div class="categories_back"> </div>
+  </div>
+</section>
+
+  <section class="ft_cd">
+  
+  <div class="filter-container">
+    <div class="filter_title">
+      <h3>Filter</h3>
+      <span class="O_cart">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-funnel-fill" viewBox="0 0 16 16">
+          <path d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5v-2z"></path>
+        </svg>
+      </span>
+    </div>
+  
+    <div class="spiciness-filter">
+      <label for="spiciness-range">Spiciness: <span id="spiciness-value">{{ spicinessText }}</span></label>
+      <input type="range" id="spiciness-range" min="-1" max="4" value="-1" [(ngModel)]="spicinessLevel" (input)="updateSpicinessText()">
+    </div>
+    
+    
+  
+    <div class="checkbox-filter">
+      <label>
+        <input type="checkbox" name="no-nuts" id="no-nuts" [(ngModel)]="filterNoNuts">
+        <span>No Nuts</span>
+      </label>
+    </div>
+    <div class="checkbox-filter">
+      <label>
+        <input type="checkbox" name="Vegetarian-Only" id="Vegetarian-Only" [(ngModel)]="filterVegetarianOnly">
+        <span>Vegetarian Only</span>
+      </label>
+    </div>
+  
+    <button class="btn reset-btn" (click)="resetFilters()">Reset</button>
+    <button class="btn apply-btn" (click)="applyFilters()">
+      <div class="pulse">
+        Apply Filter
+      </div>
+    </button>
+  </div>
+
+
+  <div class="allcard_wrap">
+    <div class="card" *ngFor="let item of newarr">
+        <div class="card-image">
+          <img [src]="item.image" alt="{{ item.name }}">
+        </div>
+        <div class="card-content">
+          <h3>{{ item.name }}</h3>
+          <p class="spiciness">Spiciness: {{ item.spiciness }}</p>
+          <p class="tags">
+            <span class="tag nut">
+              <i class="grey_o" [ngClass]="{ 'red': item.nuts }"></i>Nuts
+            </span>
+            <span class="tag vegetarian">
+              <i class="grey_o" [ngClass]="{ 'red': item.vegeterian }"></i>Vegetarian
+            </span>
+          </p>
+          <div class="Add_card_fx">
+          <p class="price">$ {{ item.price }}</p>
+          <button class="add-to-cart" (click)="addToCart(item)">Add to cart</button> 
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  
+</section>
+  

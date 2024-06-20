@@ -1,0 +1,30 @@
+section{
+    height: 388px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(https://restaurant.stepprojects.ge/images/inner_banner.jpg) no-repeat;
+    overflow: hidden;
+}
+
+h1{
+    font-size: 30px;
+    line-height: 70px;
+    color: #ffffff;
+    font-weight: 800;
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 48px;
+    text-shadow: 0px 0px 26.97px rgba(0, 0, 0, 0.75);
+}
+
+
+
+@media screen and (max-width: 1250px) {
+
+    
+    h1{
+        font-size: 24px;
+        line-height: 50px;
+    }
+}

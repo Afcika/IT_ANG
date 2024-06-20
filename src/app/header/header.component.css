@@ -1,0 +1,156 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+    height: 100px;
+    width: 100%;
+  background-color:transparent;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: -webkit-sticky;
+  position: sticky;
+  padding: 10px 0;
+  top: 0;
+  z-index: 100;
+    
+}
+.header_left img{
+  cursor: pointer;
+}
+.header_right{
+    display: flex;
+    gap: 70px;
+    align-items: center;
+    justify-content: center;
+}
+
+.header_right span{
+ text-decoration: none;
+ position: relative;
+color: #ffffff;
+font-weight: 700;
+display: inline-block;
+text-transform: capitalize;
+font-size: 15px;
+position: relative;
+cursor: pointer;
+transition: 1s ease-in-out;
+}
+.redcart{
+    background-color: red;
+padding: 5px 10px;
+border-radius: 4px;
+}
+.pizza{
+  transition: 0.5s ease all;
+  padding: 10px;
+  position: relative;
+}
+.pizza:hover span{
+  transition: 0.5s ease all;
+  color: yellow;
+}
+.pizza span::before{
+  left: -50px;
+  transition: 0.5s all ease;
+  opacity: 0;
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 60px;
+  background-color: yellow;
+  bottom: -6px;
+}
+.pizza:hover span::before{
+  opacity: 1;
+   left: -30px;
+
+}
+
+.pizza span::after{
+  transition: 0.5s all ease;
+  content: "";
+  width: 50px;
+  height: 50px;
+  background-image: url(./cheesy-pizza.png);
+  background-size: cover;
+  top:24px;
+  opacity: 0;
+  right: -40px;
+  position: absolute;
+}
+.pizza:hover span::after{
+  opacity: 1;
+  transition: 0.5s ease all;
+  top:0;
+  right: -40px;
+}
+
+
+
+.redcart::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    right: -7px;
+    background: url(https://restaurant.stepprojects.ge/images/sprit.png) no-repeat -7px -36px;
+    width: 8px;
+    height: 14px;
+}
+.redcart::after{
+    position: absolute;
+    content: "";
+    background: url(https://restaurant.stepprojects.ge/images/sprit.png) no-repeat -7px -6px;
+    width: 37px;
+    height: 26px;
+    top: 0;
+    right: -45px;
+    bottom: 0;
+    transition: right 1s ease-in-out;
+}
+
+.redcart:hover:after{
+  transition: 1s ease all   ;
+    right: -60px;
+}
+
+
+.header {
+    transition: background-color 0.3s;
+  }
+  
+.scrolled {
+    background-color: rgba(5, 5, 5, 0.8); 
+    width: 100%; 
+
+}
+
+.scrolled::after {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    margin: 0;
+    content: "";
+    background-repeat: repeat;
+    background: url(https://restaurant.stepprojects.ge/images/hover_bg.png);
+    height: 6px;
+    display: block;
+    transition: 1s ease all;
+  }
+
+
+
+  @media screen and (max-width: 1050px) {
+
+    .header_right{
+      gap: 20px;
+    }
+  
+}
